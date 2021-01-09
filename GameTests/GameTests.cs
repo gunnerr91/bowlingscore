@@ -63,6 +63,19 @@ namespace GameTests
             Assert.AreEqual(expectedScore, totalScore);
         }
 
+        [TestMethod]
+        public void Returns_Correct_Score_For_Consecutive_Strike_Bonus()
+        {
+            int[] scoreSet = { 2, 2, 10, 10, 10, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2 };
+            var expectedScore = scoreSet.Sum() + 20 + 12 + 4;
+
+            RollTheBowl(scoreSet);
+
+            var totalScore = game.Score();
+
+            Assert.AreEqual(expectedScore, totalScore);
+        }
+
         private void RollTheBowl(int[] scoreSet)
         {
             foreach (var score in scoreSet)
