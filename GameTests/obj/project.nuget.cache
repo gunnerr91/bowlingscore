@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "KcjWeHNZiH90QPtq70qqDapM/6DWxq59YTt9Sizy0Zov5TVZ54aKtutCYMOwQeA6BzoBlDO00w0SXn+Qq/aZ+A==",
+  "dgSpecHash": "4wocfoWqhdWv5wOf1AN+NN1dRzRiXyV+r9Vv4Jmwt2610tGyeolvKgG4tC1K5WeX6O7nRkSesd7GbLq8CHTs/Q==",
   "success": true,
-  "projectFilePath": "E:\\development\\bowlingscore\\GameTests\\GameTests.csproj",
+  "projectFilePath": "E:\\development\\bowlingscore\\GameTests\\BowlingScoreTests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\amukt\\.nuget\\packages\\coverlet.collector\\1.3.0\\coverlet.collector.1.3.0.nupkg.sha512",
     "C:\\Users\\amukt\\.nuget\\packages\\microsoft.codecoverage\\16.7.1\\microsoft.codecoverage.16.7.1.nupkg.sha512",

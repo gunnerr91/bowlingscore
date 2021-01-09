@@ -1,9 +1,10 @@
+using BowlingScore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace GameTests
 {
     [TestClass]
-    public class UnitTest1
+    public class GameTests
     {
         [TestMethod]
         public void Score_Returns_Total_Score()
@@ -16,11 +17,4 @@ namespace GameTests
         }
     }
 
-    public class Game
-    {
-        public int Score()
-        {
-            return 0;
-        }
-    }
 }

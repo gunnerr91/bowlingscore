@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "f6Oi05yfkr7c9sBa6M5Kw1ZXw+ZSRaTjK4NjlYKuj7WOQtscfIJEruvKyKwAX0XkMC5S721WffCjyFQHQO7xQw==",
+  "success": true,
+  "projectFilePath": "E:\\development\\bowlingscore\\BowlingScore\\BowlingScore.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\amukt\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\amukt\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
