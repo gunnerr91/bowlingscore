@@ -16,7 +16,7 @@ namespace BowlingScore
 
         public void Roll(int score)
         {
-            if (scoreSet.Count == 10) return;
+            if (currentFrame > 10) return;
             currentFrameScores.Add(score);
 
             if (spareBonusActive)
