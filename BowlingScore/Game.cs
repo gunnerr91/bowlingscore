@@ -22,9 +22,17 @@ namespace BowlingScore
 
             if (currentFrame == 10)
             {
+
                 if (currentFrameScores.Sum() == 10 && currentFrameScores.Count == 2)
                 {
                     scoreSet.Add(currentFrame, currentFrameScores.Sum());
+
+                    if (strikeBonusActive)
+                    {
+                        scoreSet[currentFrame - 1] += currentFrameScores.Sum();
+                        strikeBonusActive = false;
+                    }
+
                     spareBonusActive = true;
                     return;
                 }

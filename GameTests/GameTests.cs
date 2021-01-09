@@ -128,18 +128,18 @@ namespace GameTests
             Assert.AreEqual(expectedScore, totalScore);
         }
 
-        //[TestMethod]
-        //public void Testing_Assessment()
-        //{
-        //    int[] scoreSet = { 1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6 };
-        //    var expectedScore = 133;
+        [TestMethod]
+        public void Testing_Assessment()
+        {
+            int[] scoreSet = { 1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6 };
+            var expectedScore = 133;
 
-        //    RollTheBowl(scoreSet);
+            RollTheBowl(scoreSet);
 
-        //    var totalScore = game.Score();
+            var totalScore = game.Score();
 
-        //    Assert.AreEqual(expectedScore, totalScore);
-        //}
+            Assert.AreEqual(expectedScore, totalScore);
+        }
 
         private void RollTheBowl(int[] scoreSet)
         {
