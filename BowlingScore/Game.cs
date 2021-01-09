@@ -22,12 +22,31 @@ namespace BowlingScore
 
             if (currentFrame == 10)
             {
-                if (currentFrameScores.Sum() == 10 && currentFrameScores.Count < 3)
+                if (currentFrameScores.Sum() == 10 && currentFrameScores.Count == 2)
                 {
                     scoreSet.Add(currentFrame, currentFrameScores.Sum());
                     spareBonusActive = true;
                     return;
                 }
+
+                if (score == 10 && currentFrameScores.Count == 1 && strikeBonusActive)
+                {
+                    consecutiveStrikeActive = true;
+                    frameToUpdateForConsecutiveStrikeBonus = currentFrame - 1;
+                    return;
+                }
+
+                if (currentFrameScores.Count == 2)
+                {
+                    scoreSet.Add(currentFrame, currentFrameScores.Sum());
+                }
+
+                if (currentFrameScores.Count == 3 && currentFrameScores.Sum() > 10)
+                {
+                    scoreSet[currentFrame] = currentFrameScores.Sum();
+                    return;
+                }
+
             }
 
             if (spareBonusActive)
@@ -50,7 +69,10 @@ namespace BowlingScore
                 {
                     scoreSet[frameToUpdateForConsecutiveStrikeBonus] += currentFrameScores.Sum();
                     consecutiveStrikeActive = false;
-                    strikeBonusActive = false;
+                    if (currentFrame != 10)
+                    {
+                        strikeBonusActive = false;
+                    }
                 }
                 if (currentFrameScores.Count == 1 && strikeBonusActive)
                 {
@@ -76,7 +98,10 @@ namespace BowlingScore
                 }
                 else if (currentFrameScores.Count == 2)
                 {
-                    scoreSet[currentFrame - 1] += currentFrameScores.Sum();
+                    if (currentFrame != 10)
+                    {
+                        scoreSet[currentFrame - 1] += currentFrameScores.Sum();
+                    }
                     strikeBonusActive = false;
                 }
 
@@ -95,7 +120,7 @@ namespace BowlingScore
                 }
             }
 
-            if (currentFrameScores.Count > 1)
+            if (currentFrameScores.Count > 1 && currentFrame != 10)
             {
                 UpdateScoreAndClearCurrentFrame();
             }
