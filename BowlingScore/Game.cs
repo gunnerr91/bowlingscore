@@ -17,11 +17,30 @@ namespace BowlingScore
         public void Roll(int score)
         {
             if (currentFrame > 10) return;
+
             currentFrameScores.Add(score);
+
+            if (currentFrame == 10)
+            {
+                if (currentFrameScores.Sum() == 10 && currentFrameScores.Count < 3)
+                {
+                    scoreSet.Add(currentFrame, currentFrameScores.Sum());
+                    spareBonusActive = true;
+                    return;
+                }
+            }
 
             if (spareBonusActive)
             {
-                scoreSet[currentFrame - 1] += score;
+                if (currentFrame == 10)
+                {
+                    scoreSet[currentFrame] += score;
+                    return;
+                }
+                else
+                {
+                    scoreSet[currentFrame - 1] += score;
+                }
                 spareBonusActive = false;
             }
 
