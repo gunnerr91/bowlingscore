@@ -6,21 +6,18 @@ namespace BowlingScore
 {
     public class Game
     {
-        private List<int> scoreSet = new List<int>();
         private List<int> currentFrameScores = new List<int>();
-        private Dictionary<int, int> scoreSetv2 = new Dictionary<int, int>();
+        private Dictionary<int, int> scoreSet = new Dictionary<int, int>();
         private int currentFrame = 1;
         private bool spareBonusActive = false;
 
         public void Roll(int score)
         {
-            scoreSet.Add(score);
-
             currentFrameScores.Add(score);
 
             if (spareBonusActive)
             {
-                scoreSetv2[currentFrame - 1] += score;
+                scoreSet[currentFrame - 1] += score;
                 spareBonusActive = false;
             }
 
@@ -29,11 +26,10 @@ namespace BowlingScore
                 spareBonusActive = true;
             }
 
-
             if (currentFrameScores.Count > 1)
             {
 
-                scoreSetv2.Add(currentFrame, currentFrameScores.Sum());
+                scoreSet.Add(currentFrame, currentFrameScores.Sum());
                 currentFrame++;
                 currentFrameScores.Clear();
             }
@@ -43,7 +39,7 @@ namespace BowlingScore
         {
             var totalScore = 0;
 
-            foreach (var s in scoreSetv2)
+            foreach (var s in scoreSet)
             {
                 totalScore += s.Value;
             }
