@@ -52,6 +52,7 @@ namespace BowlingScore
                 if (currentFrameScores.Count == 3 && currentFrameScores.Sum() > 10)
                 {
                     scoreSet[currentFrame] = currentFrameScores.Sum();
+                    currentFrame++;
                     return;
                 }
 
@@ -134,16 +135,7 @@ namespace BowlingScore
             }
         }
 
-        public int Score()
-        {
-            var totalScore = 0;
-
-            foreach (var s in scoreSet)
-            {
-                totalScore += s.Value;
-            }
-            return totalScore;
-        }
+        public int Score() => scoreSet.Sum(x => x.Value);
 
         private void UpdateScoreAndClearCurrentFrame()
         {

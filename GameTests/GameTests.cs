@@ -141,6 +141,19 @@ namespace GameTests
             Assert.AreEqual(expectedScore, totalScore);
         }
 
+        [TestMethod]
+        public void Score_Does_Not_Update_After_Game_Is_Complete_When_Roll_Is_Called_Three_Times_In_The_10th_Frame()
+        {
+            int[] scoreSet = { 1, 4, 4, 5, 6, 4, 5, 5, 10, 0, 1, 7, 3, 6, 4, 10, 2, 8, 6, 2, 2, 2 };
+            var expectedScore = 133;
+
+            RollTheBowl(scoreSet);
+
+            var totalScore = game.Score();
+
+            Assert.AreEqual(expectedScore, totalScore);
+        }
+
         private void RollTheBowl(int[] scoreSet)
         {
             foreach (var score in scoreSet)
