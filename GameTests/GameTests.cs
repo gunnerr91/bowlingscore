@@ -102,6 +102,19 @@ namespace GameTests
             Assert.AreEqual(expectedScore, totalScore);
         }
 
+        [TestMethod]
+        public void Returns_Score_With_Spare_Bonus_On_The_9th_And_10th_Frame()
+        {
+            int[] scoreSet = { 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 8, 2 };
+            var expectedScore = scoreSet.Sum() + 2;
+
+            RollTheBowl(scoreSet);
+
+            var totalScore = game.Score();
+
+            Assert.AreEqual(expectedScore, totalScore);
+        }
+
         private void RollTheBowl(int[] scoreSet)
         {
             foreach (var score in scoreSet)

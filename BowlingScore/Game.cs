@@ -32,7 +32,7 @@ namespace BowlingScore
 
             if (spareBonusActive)
             {
-                if (currentFrame == 10)
+                if (currentFrame == 10 && currentFrameScores.Count > 1)
                 {
                     scoreSet[currentFrame] += score;
                     return;
